@@ -1,0 +1,17 @@
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+.column {
+  flex-direction: column;
+  }
+.vp {
+  height: 100vh;
+  }
+
+.row {
+  margin: 0 auto;
+  max-width: 1170px;
+  }
