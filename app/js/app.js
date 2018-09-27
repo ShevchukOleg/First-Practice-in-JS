@@ -1,4 +1,4 @@
-// Пеерменные залачи (var)
+// Перерменные задачи (var)
 // 1
 // let price;
 // const maxNumb = 1000;
@@ -15,7 +15,7 @@
 // 3
 // console.log(test2);
 // let test2 = 'string';
-// Так как для let не работает ефект хойстинга консоль выдаст ошыбку(переменная не существует)
+// Так как для let не работает эфект хойстинга, консоль выдаст ошыбку(переменная не существует)
 // const x1 = 'string';
 // x1 = 'String #2';
 // console.log(x);
@@ -36,7 +36,7 @@ console.log(string.indexOf('string'));
 
 // Конкретно для этой строки подходит метод:
 console.log(string.lastIndexOf(' '));
-
+// или
 const gap = ' ';
 let position = 0;
 while (true) {
@@ -48,7 +48,7 @@ while (true) {
 };
 // Простой вариант
 console.log(string.slice(5,9));
-// А вдруг первый знак будет пробелом или числом а нам нужны буквы. 
+// А вдруг первый знак будет пробелом или числом, а нам нужны буквы. 
 let firstPos = 5;
 let lastPos = 9;
 if (isNaN(string.charAt(5)) == true) {
