@@ -67,7 +67,7 @@ console.log('Max value is \"'+ Math.max(15, 11, 16, 12, 51, 12, 13, 51) + '\"' +
 let randomNumber = Math.random();
 console.log(Math.round(randomNumber*100)/100);
 
-let x = ;
+let x = 100;
 console.log(Math.random() * x);
 
 let sum = Math.round((0.7+0.6)*10)/10;
