@@ -9,15 +9,15 @@ console.log(res.slice(0, -1));
 let str_1 = 'I am in the easycode';
 let str_1_res = '';
 for (let i = 0; i < str_1.length; i++) {
-  if (i === 0) {
+  if (i === 0 || str_1[i-1] === ' ') {
     str_1_res += str_1[i].toUpperCase();
   } else if (0 < i && str_1[i-1] != ' '){
     str_1_res += str_1[i];
-  } else if (0 < i && str_1[i-1] === ' '){
-    str_1_res += str_1[i].toUpperCase();
-  }
+  } 
 }
 console.log(str_1_res);
+console.log(str_1_res[-1]);
+
 // Задача 2
 let str_2 = "tseb eht ma i";
 let str_2_res = "";
@@ -75,3 +75,5 @@ for (let np = 1; np <= 15; np++ ){
   console.log(np);
   }
 }
+i = 0;
+console.log(str3_res[i-1]);
