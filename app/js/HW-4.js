@@ -1,10 +1,10 @@
 // Задача 1
 function multiply() {
-  let result = 1,
-  maxNumber = arguments.length;
   if (arguments.length === 0) {
     result = 0;
-  } else
+  }
+  let result = 1,
+  maxNumber = arguments.length;
   for (let i = 0; i < maxNumber; i++){
     result *= arguments[i]; 
   }
