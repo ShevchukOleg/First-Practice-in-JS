@@ -31,6 +31,7 @@ function toUnicode(str_2) {
 
 // Масивы
 
+
 // Задача 1
 function doubleArr(arr) { 
   return arr.concat(arr);

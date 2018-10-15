@@ -1,3 +1,7 @@
+
+
+
+
 // Задача из лекции
 let str = "Hallo world";
 let res = "";
