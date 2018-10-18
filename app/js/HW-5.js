@@ -136,3 +136,4 @@ function filterCollection(products, min, max){
   })
 }
 filterCollection(products, 15, 30);
+
