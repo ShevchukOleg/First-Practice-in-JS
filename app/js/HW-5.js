@@ -58,17 +58,16 @@ getNewString(['abc', '123'], function(item) {
 //  Масивы
 // 1
 function srtSortAndReverse(str){
-  let arr1 = str.split('');
-  let arr2 = arr1.reverse();
-  return arr2.join('');
+  return str.split('').reverse().join('');
 }
 srtSortAndReverse("mlkjihgfedcba");
+
 // 2
 function arrSortReverse(arr){
-  let resArr = arr.sort(function(prev, next){
+  arr.sort(function(prev, next){
     return next - prev;
-  })
-  return resArr;
+  });
+  return  arr;
 } 
 arrSortReverse([2, 4, 7, 1, -2, 10, -9]);
 // 3
@@ -128,12 +127,15 @@ const products = [
 function filterCollection(products, min, max){
   let selectionArr = [];
   for (i = 0; i < products.length; i++) {
-    if(products[i].price > min && products[i].price < max)
-    selectionArr.push(products[i]);
+
+    if(products[i].price > min && products[i].price < max){
+      selectionArr.push(products[i]);
+    }
+    
   };
   return selectionArr.sort(function(prev, next){
     return prev.price - next.price;
   })
 }
 filterCollection(products, 15, 30);
-
+console.log(filterCollection(products, 15, 30))
