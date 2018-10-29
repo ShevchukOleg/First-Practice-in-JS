@@ -15,6 +15,8 @@ function filterCollection(arr = products, min, max){
     return prev.price - next.price;
   });
 }
+console.log(filterCollection(products, 15,
+   25))
 
 let resTask1 = (products, min, max) => {
   let selectionArr = [];
@@ -156,10 +158,10 @@ const edit_todo_item = (id, title, text) => {
   if (!title) return console.log("Введите новый заголовок задачи.");
   if (!text) return console.log("Введите новый текст задачи.");
 
-  let changingToDod = storage.current_todos.filter(todo => todo.id === id);
+  let changingToDo = storage.current_todos.some(todo => todo.id === id);
 
-  changingToDod = {title, text, id};
+  changingToDo = {title, text, id};
   storage.current_todos = storage.current_todos.filter(todo => todo.id !== id);
-  storage.current_todos.push(changingToDod);
+  storage.current_todos.push(changingToDo);
   return storage.current_todos;
 }
