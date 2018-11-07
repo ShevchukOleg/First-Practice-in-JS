@@ -21,22 +21,27 @@ isParent(document.querySelector('ul'), document.querySelector('mark'));
  */
 
 let findLink = (exclusionParent) => {
-  let allLink = document.getElementsByTagName('a');
-  let allExeptionParents = document.getElementsByTagName(exclusionParent)
+  let allLinks = document.links;
   let resList = [];
-  
-  for (let i = 0; i < allExeptionParents.length; i++){
-
-    for(let z = 0; z < allLink.length; z++ ){
-      if (!allExeptionParents[i].contains(allLink[z])){
-      resList.push(allLink[i]);
-      }
+  // let allExeptionParents = document.getElementsByTagName(exclusionParent);
+  for (let i = 0;  i < allLinks.length; i++){
+    if(!allLinks[i].closest(exclusionParent)){
+      resList.push(allLinks[i]);
     }
-    return resList;
   }
-// понимаю что костыль подскажите как правильно? и как запустить цикл в цикле?
+  return resList;
+  
+  // for (let i = 0; i < allExeptionParents.length; i++){
+
+  //   for(let z = 0; z < allLinks.length; z++ ){
+  //     if (!allExeptionParents[i].contains(allLinks[z])){
+  //     resList.push(allLinks[i]);
+  //     }
+  //   }
+  //   return resList;
+  // }
 }
-findLink("ul");
+// findLink("ul");
 
 // Задача 3
 /**
@@ -87,7 +92,7 @@ let count = () => {
  */
 let addNewClass = (newClass) => {
   let list = document.querySelector('ul');
-  list.setAttribute('class', newClass);
+  list.classList.add(newClass);
   return list;
 }
 addNewClass("list");
@@ -108,13 +113,13 @@ setId('link');
 
 /**
  * etClassOnLi - поиск ссылки после ul и изменение на заданный класс
- * @param {*} NewLiClass - класс для ссылки
+ * @param {*} newLiClassClass - класс для ссылки
  */
-let setClassOnLi = NewLiClass => {
+let setClassOnLi = newLiClassClass => {
   let listLi = document.querySelector('ul').getElementsByTagName('li');
 
   for(let i = 0; i < listLi.length; i +=2 ){
-    listLi[i].setAttribute('class', NewLiClass);
+    listLi[i].setAttribute('class', newLiClassClass);
   }
 
   return listLi;
@@ -141,16 +146,16 @@ setOnA_tegClass('custom-link');
 //Презентация 24
 // Задача 1
 /**
- * addNewLi - создает новые элементы ненумерованного списка
+ * addNewLiClass - создает новые элементы ненумерованного списка
  */
-let addNewLi = () => {
+let addNewLiClass = () => {
   let parentPosition = document.querySelector('ul');
  
-    for (let i = 0; i < 5; i++){
+    for (let i = parentPosition.getElementsByTagName('li').length; i < 9; i++){
     parentPosition.insertAdjacentHTML('beforeend', `<li class ="new-item">Link ${i+1}</li>`)
    }
 }
-// addNewLi();
+// addNewLiClass();
 
 //Задача 2
 /**
@@ -158,11 +163,10 @@ let addNewLi = () => {
  */
 let SpesialStrongTag = () => {
   let link = document.querySelector('ul').getElementsByTagName('a');
-  let strong = document.createElement('strong');
-  strong.innerHTML = 'This is strong';
-
   for (let i = 0; i < 3; i++){
-    link[i].insertAdjacentHTML("beforeend", strong);
+    let strong = document.createElement('strong');
+    strong.innerHTML = ` This is strong ${i+1}`;
+    link[i].insertAdjacentElement("beforeend", strong);
   }
 }
 
@@ -224,12 +228,11 @@ let sortLi = () => {
       arrSpecial.push(arr[i]);
       }
      
-    
     for (let i = 0; i < list.length; i++){
       console.log(arrSpecial[i].innerHTML)
       list[i].innerHTML = arrSpecial[i].innerHTML;
     }
-
+    
     return list;
 }
 // попытка 2
@@ -265,4 +268,19 @@ let sortLi2 = () => {
 }
 
 // sortLi2();
-// На решение последней задачи (методом проб и ошибок) ушло 7 часов, грустно...
+
+// Вариант 3
+
+const sortLi3 = () => {
+  let elementUl = document.querySelector("ul");
+  let arrForSorting = document.querySelectorAll("ul li");
+  let arrSorting = [].slice.call(arrForSorting);
+  arrSorting.sort((prev, next) => {
+    return next.textContent[4] - prev.textContent[4];
+  });
+  elementUl.innerHTML = "";
+  arrSorting.forEach( element => {
+    elementUl.insertAdjacentElement('beforeend', element);
+  });
+}
+// sortLi3();
