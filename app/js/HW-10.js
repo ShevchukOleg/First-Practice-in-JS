@@ -33,31 +33,6 @@ function getFood(){ // создание функции с var food = 'cucumber' 
   console.log(food);
 }
 
-var a = 1;
-(function getA (){
-  var a = 2;
-  getRes();
-})();
-
-function getRes(){
-  console.log(a);
-}
-
-
-function numberGenerator() {
-  // Локальная «свободная» переменная, которая доступна только в замыкании
-  var num = 1;
-  function checkNumber() {
-    console.log(num);
-  }
-  num++;
-  return checkNumber;
-}
-
-var number = numberGenerator();
-number(); // 2
-
-
 
 
 // -----------------------------------------------ДЗ----------------------------------------------------
