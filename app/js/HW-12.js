@@ -40,7 +40,7 @@ class Car1 {
 }
 
 const secondCar = new Car1("BMW", 3);
-console.log(secondCar.getName(), secondCar.getAge());
+secondCar.getName(), secondCar.getAge();
 
 //Task2
 function Enigma (str){
@@ -67,4 +67,31 @@ function Enigma (str){
     }
 }
 
-const code = new Enigma(prompt('Введите текст', ''));
+// const code = new Enigma(prompt('Введите текст', ''));
+
+//Task 3
+function Str (string) {
+  this.string  = string;
+  this.getStr = function(){
+    return this.string;
+  }
+
+  this.setStr = function(newStr){
+    this.string = newStr;
+    return this.string;
+  }
+
+  this.strLength = function(){
+    return this.string.length;
+  }
+  this.toString = function(){
+    return this.string;
+  }
+
+  this.valueOf = function() {
+    return this.string.length;;
+  }
+
+}
+
+const str = new Str('some new str');
